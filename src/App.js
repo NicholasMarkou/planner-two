@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import {useEffect, useState} from "react";
+import CoursesPage from "./Courses/CoursesPage";
 
 function App() {
+    const [jsonData, setJsonData] = useState([]);
+
+    useEffect( () => {
+        //fetch('https://courselistings.wpi.edu/assets/prod-data.json')
+        fetch('./prod-data.json')
+            .then(data => data.json())
+            .then(data => {
+                setJsonData(data.Report_Entry)
+            })
+    }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+          <header className="App-header">
+              <h1>Planner 2</h1>
+              <p>Developed by Nicholas Markou</p>
+          </header>
+          <CoursesPage data={jsonData} />
+      </div>
   );
 }
 
