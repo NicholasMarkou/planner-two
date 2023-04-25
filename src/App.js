@@ -1,6 +1,8 @@
 import './App.css';
 import {useEffect, useState} from "react";
 import CoursesPage from "./Courses/CoursesPage";
+import CalendarView from "./CalendarView/CalendarView";
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
 function App() {
     const [jsonData, setJsonData] = useState([]);
@@ -17,10 +19,14 @@ function App() {
   return (
       <div className="App">
           <header className="App-header">
-              <h1>Planner 2</h1>
-              <p>Developed by Nicholas Markou</p>
+              <h1>WPI Course Planner and Scheduler</h1>
           </header>
-          <CoursesPage data={jsonData} />
+          <Router>
+              <Routes>
+                  <Route path="/" element={<CoursesPage data={jsonData} />} />
+                  <Route path="/calendar" element={<CalendarView />} />
+              </Routes>
+          </Router>
       </div>
   );
 }

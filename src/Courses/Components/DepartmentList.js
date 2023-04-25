@@ -5,8 +5,7 @@ function DepartmentList(props) {
 
     return (
         <div className="dept-list">
-            <p>Departments: </p>
-            <select className="dept-select" onChange={props.handleSelect}>
+            <select className="dept-select" onChange={props.handleSelect} multiple>
                 {
                     Array.from(props.departments).map( e => <option value={e} label={e} key={e}/>)
                 }

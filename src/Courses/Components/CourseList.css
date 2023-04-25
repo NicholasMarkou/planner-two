@@ -4,4 +4,9 @@ table, th, td {
 
 table {
     table-layout: auto;
+    width:100%;
+}
+
+.container-table {
+    overflow-y: auto;
 }

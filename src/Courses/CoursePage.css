@@ -1,0 +1,16 @@
+.course-panel {
+    height: 90vh;
+    border: 1px black solid;
+}
+
+.link-schedule {
+    background-color: #ac2b37;
+    font-family: 'Verdana', sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 1.25em;
+    text-align: center;
+    padding: 2%;
+    height:5vh;
+    cursor: pointer;
+}

@@ -1,3 +1,10 @@
 .description-title {
     text-align: center;
 }
+.description-block {
+    overflow-y: auto;
+}
+
+img {
+    width: 100%;
+}
