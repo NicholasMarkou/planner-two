@@ -21,7 +21,7 @@ function App() {
           <header className="App-header">
               <h1>WPI Course Planner and Scheduler</h1>
           </header>
-          <Router>
+          <Router basename='/planner-two'>
               <Routes>
                   <Route path="/" element={<CoursesPage data={jsonData} />} />
                   <Route path="/calendar" element={<CalendarView />} />
